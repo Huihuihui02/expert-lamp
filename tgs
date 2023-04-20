@@ -1,0 +1,10 @@
+#!/bin/bash
+
+YOUR_CHAT_ID="-1001926105154"
+
+YOUR_BOT_TOKEN="6123954356:AAGdREkH1R0QimcOS6UXbibZ29QA9oUeoB0"
+API="https://api.telegram.org/bot$YOUR_BOT_TOKEN/sendMessage"
+
+MSG="$(cat logs.txt)"
+
+curl -s -X POST "$API" -d chat_id="$YOUR_CHAT_ID" -d text="$MSG"
